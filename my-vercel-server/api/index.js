@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import { MongoClient, ObjectId } from "mongodb";
 import dotenv from "dotenv";
+export const handler = serverless(app);
+
+//-----------------------//
 
 dotenv.config();
 
@@ -54,6 +57,7 @@ async function run() {
     app.get("/", (req, res) => {
       res.send("Backend server is running.");
     });
+    
 
     app.get("/bids", async (req, res) => {
       try {
